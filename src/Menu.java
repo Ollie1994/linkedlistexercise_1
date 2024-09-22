@@ -7,11 +7,15 @@ ReturnInt returnInt = new ReturnInt();
     public int menuAddRemove () {
         Scanner sc = new Scanner(System.in);
         System.out.println("Available actions!");
-        System.out.println("0. To shutdown!");
-        System.out.println("1. To add item(s) to list");
+        System.out.println("0. EXIT!");
+        System.out.println("1. To add city(s) to list");
+        System.out.println("2. (F)orward/(B)ackwards");
+        System.out.println("3. (L)ist Places");
         System.out.println("Enter the number for which action you want to take");
         int choice = sc.nextInt();
         return choice;
     }
+
+
 //-------------------------------------------------------------------------------------
 }

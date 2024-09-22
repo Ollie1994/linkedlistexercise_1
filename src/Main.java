@@ -1,7 +1,4 @@
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,13 +13,12 @@ public class Main {
 
 //----------------------------------------------------------
         while (true) {
-
-
             int menuChoice = menu.menuAddRemove();
             switch (menuChoice) {
-                case 0:
+                case 0: // EXIT
+                    System.out.println("Goodbye!");
                     return;
-                case 1:
+                case 1: // ADD CITYS
                     String addCity = returnString.returnCityName();
                     int addDistance = returnInt.returnDistanceFromGb();
                     if (dupeSorter.contains(addCity)) {
@@ -33,16 +29,57 @@ public class Main {
                         citys.add(new Citys(addCity, addDistance));
                     }
                     break;
-            }
-            citys.sort(Comparator.comparingInt(Citys::getDistanceFromGbInKm));
+                case 2: // FORWARD/BACKWARDS
+                    while (true) {
+                        System.out.println("Do you want to go backwards(false) or forwards(true)? ");
+                        boolean answer = sc.nextBoolean();
+                       Citys location = null;
+                       Citys forward;
+                        if (answer) {
+                            System.out.println("How many step do you want to got forward with?");
+                           int input = sc.nextInt();
+                            for (int i = 0; i < input; i++) {
+                                ListIterator<Citys> iterator = citys.listIterator();
+                                forward = iterator.next();
+                                location = forward;
+                                System.out.println("You are here " + location);
+                            }
+                        } else if (false) {
+                          /* ListIterator<Citys> listIterator = citys.listIterator();
+                          Citys backwards = listIterator.previous();
+                          location = listIterator.previous();
+                            System.out.println(location); */
+                        } else {
+                            break;
+                        }
 
+
+                    }
+
+                case 3: // LIST LIST
+                    citys.sort(Comparator.comparingInt(Citys::getDistanceFromGbInKm));
+                    String s = "";
+                    Iterator<Citys> itr = citys.iterator();
+                    while (itr.hasNext()) {
+                        s = s + itr.next() + "\n";
+                    }
+                    System.out.println(s);
+
+
+            }
+           /*
+           citys.sort(Comparator.comparingInt(Citys::getDistanceFromGbInKm));
             String s = "";
             Iterator<Citys> itr = citys.iterator();
             while (itr.hasNext()) {
                 s = s + itr.next() + "\n";
             }
-            System.out.println(s);
+            System.out.println(s); */
         }
+
+
+
+
     }
 }
 
@@ -51,32 +88,6 @@ public class Main {
 
 
 
-            // adding elements to linked list
-           /*citys.add(new Citys("Berlin", 582));
-            citys.add(new Citys("Gothenburg", 0));
-            citys.add(new Citys("Madrid", 2222));
-            citys.add(new Citys("Paris", 1161));
-            citys.add(new Citys("Rom", 1755));
-            citys.add(new Citys("Oslo", 251));
-            citys.add(new Citys("Warsaw", 838));
-            citys.sort(Comparator.comparingInt(Citys::getDistanceFromGbInKm));
-
-
-            using string class
-            String s = "";
-
-            // using iterator for traversing a linked list
-            Iterator<Citys> itr = citys.iterator();
-
-            while (itr.hasNext()) {
-                // appending string using "+" operator
-                s = s + itr.next() + "\n";
-            }
-
-            // Displaying output
-            System.out.println(s);
-
-        */
 
 
 
