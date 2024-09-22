@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Menu {
-MenuAddRemove menuAddRemove = new MenuAddRemove();
+//MenuAddRemove menuAddRemove = new MenuAddRemove();
 ReturnString returnString = new ReturnString();
 ReturnInt returnInt = new ReturnInt();
 
