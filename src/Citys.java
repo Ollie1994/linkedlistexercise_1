@@ -4,13 +4,12 @@ public class Citys {
 
     private String cityName;
     private int distanceFromGbInKm;
-
+    //__________________________________________________________________________
     public Citys(String cityName, int distanceFromGbInKm)
     {
         this.cityName = cityName;
         this.distanceFromGbInKm = distanceFromGbInKm;
     }
-
     //---------------------Getters&Setters-----------------------------------------------
     public String getCityName() {return cityName;}
     public void setCityName(String cityName) {this.cityName = cityName;}

@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -25,39 +26,21 @@ public class Main {
                     String addCity = returnString.returnCityName();
                     int addDistance = returnInt.returnDistanceFromGb();
                     if (dupeSorter.contains(addCity)) {
-                        System.out.println("Unable to add: " + addCity);
-                        break;
+                        System.out.println("Unable to add: " + addCity + ", because it already exists in the list");
                     }
                     else {
                         dupeSorter.add(addCity);
                         citys.add(new Citys(addCity, addDistance));
                     }
                     break;
-                case 2:
-                    String removeCity = returnString.returnCityName();
-                    int removeDistance = returnInt.returnDistanceFromGb();
-                    if (!citys.contains(removeCity)) {
-                        System.out.println("Unable to remove: " + removeCity );
-                        break;
-                    }
-                    else {
-                        citys.remove(new Citys(removeCity, removeDistance));
-                    }
-                    break;
-
             }
-            //using string class
+            citys.sort(Comparator.comparingInt(Citys::getDistanceFromGbInKm));
+
             String s = "";
-
-            // using iterator for traversing a linked list
             Iterator<Citys> itr = citys.iterator();
-
             while (itr.hasNext()) {
-                // appending string using "+" operator
                 s = s + itr.next() + "\n";
             }
-
-            // Displaying output
             System.out.println(s);
         }
     }
