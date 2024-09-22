@@ -22,12 +22,6 @@ public class Citys {
         return "City: " + cityName + ", Distance from Gothenburg: " + distanceFromGbInKm;
     }
     //-----------------------------------------------------------------------------------------
-    public Citys addToArray(Citys add) {
-        return add;
-    }
-    public Citys removeFromArray(Citys remove) {
-        return remove;
-    }
 
 
 }
