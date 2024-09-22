@@ -1,33 +1,30 @@
-// Java program to Convert LinkedList to String in Java
+// https://www.geeksforgeeks.org/convert-linkedlist-to-string-in-java/
 
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class Citys {
 
-    // class field
+
     private String cityName;
     private int distanceFromGbInKm;
-
-    // parameterised constructor
     public Citys(String cityName, int distanceFromGbInKm)
     {
         this.cityName = cityName;
         this.distanceFromGbInKm = distanceFromGbInKm;
     }
-
-    // getter for name
-    public String getName() { return cityName; }
-
-    // setter for name
-    public void setName(String name) { this.cityName = name; }
-
-    // getter for marks
-    public int getID() { return distanceFromGbInKm; }
-
-    // setter for marks
-    public void setID(int id) { this.distanceFromGbInKm = id; }
+    public String getCityName() {
+        return cityName;
+    }
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+    public int getDistanceFromGbInKm() {
+        return distanceFromGbInKm;
+    }
+    public void setDistanceFromGbInKm(int distanceFromGbInKm) {
+        this.distanceFromGbInKm = distanceFromGbInKm;
+    }
 
 
 
@@ -72,7 +69,6 @@ class Main {
 
     }
 }
-
 
 
 
